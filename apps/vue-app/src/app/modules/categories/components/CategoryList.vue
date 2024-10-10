@@ -6,9 +6,25 @@
       </div>
 
       <hr />
-      <li v-for="category in categories" :key="category._id">
-        {{ category.name }}
-      </li>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Category name</td>
+            <td>
+              <i class="fa-solid fa-pen me-3" data-bs-toggle="modal" data-bs-target="#createCategoryModal"></i>
+              <i class="fa-solid fa-trash"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
   </div>
   <CategoryForm/>
  </template>
@@ -18,43 +34,6 @@ import CategoryForm from './CategoryForm.vue';
 export default {
   components: {
     CategoryForm
-  },
-  data(){
-        return {
-            categories: [
-            {
-                _id:'2',
-                name: 'Category 1'
-            } ,  
-            {
-                _id:'3',
-                name: 'Category 2'
-            } ,  
-            {
-                _id:'4',
-                name: 'Category 3'
-            } ,   
-            {
-                _id:'5',
-                name: 'Category 4'
-            } ,  
-            ]
-        }
-    },
-    buildCategories(){
-        this.categoriies = [
-            {
-                _id:'1',
-                name: 'All'
-            },
-            ...this.categoriies
-        ]
-
-        this.categoriies = this.categoriies.map((categoriies) => ({
-            ...categoriies,
-            active: category.name ==='All'
-        })
-        )
-    }
+  }
 };
 </script>

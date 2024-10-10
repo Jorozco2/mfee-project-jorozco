@@ -6,12 +6,12 @@
         <form>
           <div class="form-group pb-3">
             <label>Username</label>
-            <input type="text" class="form-control is-invalid" v-model="credentials.username"/>
+            <input type="text" class="form-control is-invalid" />
             <span class="form-text text-danger"> Error </span>
           </div>
           <div class="form-group pb-3">
             <label>Password</label>
-            <input type="password" class="form-control" v-model="credentials.password"/>
+            <input type="password" class="form-control" />
             <span class="form-text text-danger"> Error </span>
           </div>
 
@@ -25,15 +25,3 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-    data() {
-        return {
-          credentials: {
-            username: null,
-            password: null,
-          }
-        };
-    },
-};
-</script>
